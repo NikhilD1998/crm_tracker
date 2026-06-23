@@ -135,8 +135,45 @@ const Opportunities = () => {
 
       {/* Content */}
       {loading ? (
-        <div className="bg-white rounded-2xl shadow-sm p-12 text-center">
-          Loading opportunities...
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+          <div className="animate-pulse">
+            {/* Table Header */}
+            <div className="grid grid-cols-8 gap-4 px-6 py-4 border-b bg-gray-50">
+              {[...Array(8)].map((_, index) => (
+                <div key={index} className="h-4 bg-gray-200 rounded w-20" />
+              ))}
+            </div>
+
+            {/* Table Rows */}
+            {[...Array(6)].map((_, row) => (
+              <div
+                key={row}
+                className="grid grid-cols-8 gap-4 px-6 py-5 border-b"
+              >
+                <div className="h-4 bg-gray-200 rounded w-24" />
+                <div className="h-4 bg-gray-200 rounded w-32" />
+                <div className="h-4 bg-gray-200 rounded w-20" />
+                <div className="h-6 bg-gray-200 rounded-full w-16" />
+                <div className="h-6 bg-gray-200 rounded-full w-16" />
+                <div className="h-4 bg-gray-200 rounded w-24" />
+                <div className="h-4 bg-gray-200 rounded w-20" />
+                <div className="h-8 bg-gray-200 rounded w-24" />
+              </div>
+            ))}
+
+            {/* Footer Loader */}
+            <div className="flex flex-col items-center py-8">
+              <div className="flex gap-2 mb-4">
+                <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
+                <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
+              </div>
+
+              <p className="text-gray-500 font-medium">
+                Loading opportunities...
+              </p>
+            </div>
+          </div>
         </div>
       ) : filteredOpportunities.length === 0 ? (
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-12 text-center">
