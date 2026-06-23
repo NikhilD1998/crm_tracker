@@ -11,7 +11,11 @@ const app = express();
 
 connectDB();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://crm-tracker-neon.vercel.app", "http://localhost:5173"],
+  }),
+);
 
 app.use(express.json());
 
