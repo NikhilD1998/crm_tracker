@@ -1,0 +1,281 @@
+{
+  "info": {
+    "_postman_id": "8e00aa0e-db62-4023-bf74-f590e9907936",
+    "name": "CRM-Tracker",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "43157116"
+  },
+  "item": [
+    {
+      "name": "Register user",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Nikhil Dada\",\r\n    \"email\": \"nikhil2@example.com\",\r\n    \"password\": \"password@123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseurl}}/api/auth/register",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login user",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"nikhil2@example.com\",\r\n    \"password\": \"password@123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseurl}}/api/auth/login",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get me",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"nikhil1@example.com\",\r\n    \"password\": \"password@123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseurl}}/api/auth/me",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "me"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get all opportunities",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"nikhil1@example.com\",\r\n    \"password\": \"password@123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseurl}}/api/opportunities",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "opportunities"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get opportunities by ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"nikhil1@example.com\",\r\n    \"password\": \"password@123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseurl}}/api/opportunities/6a3914f2ff3ff812ae6f39e3",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "opportunities",
+            "6a3914f2ff3ff812ae6f39e3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create opportunity",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"customerName\": \"Tesla Inc. 2\",\r\n  \"contactName\": \"Elon Musk\",\r\n  \"contactEmail\": \"elon@tesla.com\",\r\n  \"contactPhone\": \"+1-555-123-4567\",\r\n  \"requirement\": \"Enterprise CRM solution with analytics dashboard\",\r\n  \"estimatedValue\": 150000,\r\n  \"stage\": \"Qualified\",\r\n  \"priority\": \"High\",\r\n  \"nextFollowUpDate\": \"2026-06-30\",\r\n  \"notes\": \"Interested in premium plan. Follow up after proposal review.\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseurl}}/api/opportunities",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "opportunities"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update opportunity",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"stage\": \"Proposal Sent\",\r\n  \"priority\": \"High\",\r\n  \"estimatedValue\": 200000,\r\n  \"nextFollowUpDate\": \"2026-07-05\",\r\n  \"notes\": \"Proposal shared with client. Waiting for feedback.\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseurl}}/api/opportunities/6a3914f2ff3ff812ae6f39e3",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "opportunities",
+            "6a3914f2ff3ff812ae6f39e3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete opportunity",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"stage\": \"Proposal Sent\",\r\n  \"priority\": \"High\",\r\n  \"estimatedValue\": 200000,\r\n  \"nextFollowUpDate\": \"2026-07-05\",\r\n  \"notes\": \"Proposal shared with client. Waiting for feedback.\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseurl}}/api/opportunities/6a3914f2ff3ff812ae6f39e3",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "opportunities",
+            "6a3914f2ff3ff812ae6f39e3"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMzkxNWNiMjRhNTM2YmNiMDQwZDAyZiIsImlhdCI6MTc4MjEzMDIyNSwiZXhwIjoxNzgyMTM3NDI1fQ.HK7XhkwZ5a2jpR0L-l4L4I9X_TIUJQ3KlKLOq5F97lM",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseurl",
+      "value": ""
+    }
+  ]
+}
